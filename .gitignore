@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+*.log
+.DS_Store
+coverage/
+.nyc_output/
+*.swp
+*.swo
+*~
+.env
+.env.local

@@ -1,0 +1,38 @@
+{
+  "name": "aegis",
+  "version": "0.1.0",
+  "description": "A static analysis tool for Solidity smart contracts focused on security, correctness, and productivity",
+  "main": "src/cli/index.js",
+  "bin": {
+    "aegis": "./src/cli/index.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "start": "node src/cli/index.js"
+  },
+  "keywords": [
+    "solidity",
+    "security",
+    "static-analysis",
+    "smart-contracts",
+    "audit",
+    "vulnerability-detection"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "@solidity-parser/parser": "^0.20.0",
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "@types/node": "^20.10.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

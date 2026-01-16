@@ -99,15 +99,31 @@ class Scanner {
    * @returns {Promise<Object[]>} Array of scan results
    */
   async scan(target) {
-    const absolutePath = path.resolve(target);
-    const stats = fs.statSync(absolutePath);
+    try {
+      const absolutePath = path.resolve(target);
+      const stats = fs.statSync(absolutePath);
 
-    if (stats.isFile()) {
-      return [await this.scanFile(absolutePath)];
-    } else if (stats.isDirectory()) {
-      return await this.scanDirectory(absolutePath);
-    } else {
-      throw new Error(`Invalid target: ${target}`);
+      if (stats.isFile()) {
+        return [await this.scanFile(absolutePath)];
+      } else if (stats.isDirectory()) {
+        return await this.scanDirectory(absolutePath);
+      } else {
+        throw new Error(`Invalid path: ${target}`);
+      }
+    } catch (error) {
+      // Handle filesystem errors with user-friendly messages
+      if (error.code === 'ENOENT') {
+        throw new Error(`File or directory not found: ${target}`);
+      } else if (error.code === 'EACCES') {
+        throw new Error(`Permission denied: ${target}`);
+      } else if (error.code === 'ENOTDIR') {
+        throw new Error(`Invalid path: ${target} (expected directory)`);
+      } else if (error.message && !error.message.startsWith('File or directory') && !error.message.startsWith('Permission denied') && !error.message.startsWith('Invalid path')) {
+        // Preserve custom error messages from scanFile
+        throw error;
+      } else {
+        throw new Error(`Error scanning ${target}: ${error.message || 'Unknown error'}`);
+      }
     }
   }
 }

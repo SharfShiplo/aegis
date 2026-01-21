@@ -29,7 +29,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/SharfShiplo/aegis.git"
+    "url": "git+https://github.com/SharfShiplo/aegis.git"
   },
   "bugs": {
     "url": "https://github.com/SharfShiplo/aegis/issues"

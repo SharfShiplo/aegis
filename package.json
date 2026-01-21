@@ -1,10 +1,9 @@
 {
-  "name": "aegis",
+  "name": "@aegis-security/aegis",
   "version": "0.1.0",
   "description": "A static analysis tool for Solidity smart contracts focused on security, correctness, and productivity",
-  "main": "src/cli/index.js",
   "bin": {
-    "aegis": "./src/cli/index.js"
+    "aegis": "src/cli/index.js"
   },
   "scripts": {
     "test": "jest",
@@ -20,8 +19,22 @@
     "audit",
     "vulnerability-detection"
   ],
-  "author": "",
   "license": "MIT",
+  "files": [
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "CONTRIBUTING.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SharfShiplo/aegis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SharfShiplo/aegis/issues"
+  },
+  "homepage": "https://github.com/SharfShiplo/aegis#readme",
   "dependencies": {
     "commander": "^11.1.0",
     "chalk": "^4.1.2",

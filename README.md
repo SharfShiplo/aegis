@@ -13,18 +13,21 @@ A static analysis tool for Solidity smart contracts focused on security, correct
 
 ## Installation
 
+The npm package is published under the scoped name `@aegis-security/aegis`. Although the package is published under a scoped name, the CLI command is simply `aegis`.
+
+For local development:
 ```bash
 npm install
 ```
 
 For global installation:
 ```bash
-npm install -g .
+npm install -g @aegis-security/aegis
 ```
 
 Or use via npx:
 ```bash
-npx aegis scan .
+npx @aegis-security/aegis scan .
 ```
 
 ## Quick Start
@@ -193,11 +196,13 @@ jobs:
 ```
 
 ## Examples
+Some examples intentionally trigger MEDIUM findings to demonstrate how Aegis reports non-critical issues.
 
 See the `examples/` directory for sample Solidity contracts:
 
 - `vulnerable-contract.sol`: Contains various vulnerabilities for testing
-- `safe-contract.sol`: Demonstrates secure coding practices
+- `safe-contract.sol`: Demonstrates mostly safe patterns but may still trigger non-critical findings (e.g. gas-related warnings)
+- `clean-example.sol`: Demonstrates a contract with zero findings
 
 Run Aegis on these examples:
 
@@ -246,4 +251,5 @@ MIT
 
 ## Disclaimer
 
-Aegis is a static analysis tool and cannot detect all possible vulnerabilities. Always conduct thorough security audits, especially before deploying to mainnet. This tool is provided as-is for educational and development purposes.
+Aegis is an automated static analysis tool and does not guarantee the detection of all security vulnerabilities. It should not be considered a substitute for a comprehensive security audit or professional review. Always perform thorough testing and independent audits before deploying smart contracts to mainnet. This software is provided “as is” without warranties of any kind.
+

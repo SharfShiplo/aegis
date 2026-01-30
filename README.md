@@ -1,3 +1,10 @@
+
+![npm](https://img.shields.io/npm/v/@aegis-security/aegis)
+![npm](https://img.shields.io/npm/dm/@aegis-security/aegis)
+![license](https://img.shields.io/npm/l/@aegis-security/aegis)
+
+📦 **npm**: [https://www.npmjs.com/package/@aegis-security/aegis](https://www.npmjs.com/package/@aegis-security/aegis)
+
 # Aegis
 
 A static analysis tool for Solidity smart contracts focused on security, correctness, and productivity. Aegis helps developers, auditors, and researchers identify common vulnerabilities and code smells in Solidity code.
